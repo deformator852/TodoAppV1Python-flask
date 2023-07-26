@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <a href="{{ url_for('filter_index',filter='do') }}" class="filter-todo do-link">DO</a>
+  <a href="{{ url_for('filter_index',filter='done') }}" class="filter-todo done-link">DONE</a>
+  <a href="{{ url_for('index') }}" class="filter-todo back-main">MAIN</a>
+  <div class="todo-form">
+    <h1>TODO </h1>
+    {% for msg in get_flashed_messages() %}
+    <h5>{{ msg }}</h5>
+    {% endfor %}
+    <form action="/create_todo" method="POST">
+      <input class ="todo_title" type="text" name="todo_title" placeholder="Enter todo" required>
+      <br><br>
+      <input class="todo_due_date" type="text" name="todo_due_date" required placeholder="00.00.0000">
+      <br><br>
+      <input type="submit" class="button-add" value="Add">
+    </form>
+    <hr>
+    {% for element in todo_list%}
+    <p class="deadline">
+        {{ element[1] }}<br>
+        {{ element[2] }}<br><br>
+          {% if element[3] == 'do' %}
+            <a class="button-link do-button">not completed</a>
+            <a href="{{ url_for('done_todo',todo_id=element[0]) }}" class="button-link done-button">Done</a>
+            <a href="{{ url_for('delete_todo',todo_id=element[0]) }}" class="button-link delete-button">Delete</a>
+          {% endif %}
+
+          {% if element[3] == 'done' %}
+            <a class="button-link done-button">Done</a>
+            <a href="{{ url_for('delete_todo',todo_id=element[0]) }}" class="button-link delete-button">Delete</a>
+          {% endif %}
+        <hr>
+        {% endfor %}
+    </p>
+  </div>
+</body>
+</html>

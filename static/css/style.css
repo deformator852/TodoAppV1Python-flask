@@ -1,0 +1,89 @@
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 600px;
+  height: 27px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form input,
+form label {
+  margin-bottom: 10px;
+}
+
+
+.button-add {
+  width: 200px;
+  height: 40px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button-add:hover {
+  background-color: #0056b3;
+}
+
+.button-link {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.do-button{
+  background-color: #007bff;
+}
+
+.done-button {
+  background-color:green;
+}
+.delete-button {
+  background-color:red;
+}
+
+.filter-todo {
+  text-decoration: none;
+  background-color:#007bff;
+  padding: 10px 20px;
+  position: absolute;
+  color: #fff; /* Change the color of the link */
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border:none;
+}
+
+.do-link {
+  top: 10px; /* Adjust the top position as needed */
+  right: 592px; /* Adjust the right position as needed */
+}
+
+.done-link {
+  top: 10px; /* Adjust the top position as needed */
+  right: 485px; /* Adjust the right position as needed */
+}
+
+.back-main {
+  top: 10px; /* Adjust the top position as needed */
+  right: 382px
+}
+
+
+
+

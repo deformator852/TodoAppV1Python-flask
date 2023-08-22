@@ -3,7 +3,7 @@ import sqlite3
 from flask import Flask, render_template, request, redirect, flash, url_for
 
 app = Flask(__name__)
-app.secret_key = "324asdf1322pasdkjj1`23nj"
+app.secret_key = ""
 
 
 def connect_db():
